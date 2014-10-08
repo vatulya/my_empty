@@ -1,2 +1,2 @@
-visit
+My Empty Project
 =====
