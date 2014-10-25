@@ -1,24 +1,15 @@
 module.exports = function (grunt) {
 
     grunt.initConfig({
-//        concat: {
-//
-//        },
-//        uglify: {
-//
-//        },
-//        jshint: {
-//
-//        },
         less: {
             development: {
                 files: {
-                    "public/css/common.css": "public/less/common.less"
+                    "public/css/pages/index__common.css": "public/less/pages/index/common.less"
                 }
             },
             production: {
                 files: {
-                    "public/css/common.css": "public/less/common.less"
+                    "public/css/pages/index__common.css": "public/less/pages/index/common.less"
                 }
             }
         }

@@ -18,6 +18,11 @@ abstract class AbstractController
      */
     abstract public function indexAction();
 
+    public function init()
+    {
+
+    }
+
     /**
      * @param string $action
      * @param string $controller
@@ -33,17 +38,18 @@ abstract class AbstractController
         $class = '\Controller\\' . ucfirst(strtolower($controller));
         $method = ucfirst(strtolower($action)) . 'Action';
         if (!class_exists($class) || !is_callable([$class, $method], true)) {
-//            die('Can\'t load "' . $class . '::' . $method . '"');
-            die('Something wrong');
+            die('Can\'t load "' . $class . '::' . $method . '"');
+//            die('Something wrong');
         }
         try {
             /** @var AbstractController $object */
             $object = new $class();
+            $object->init();
             $object->$method();
             $object->render($controller, $action);
         } catch (\Exception $e) {
-//            die('Exception: "' . $e->getMessage() . '" (' . $e->getFile() . ':' . $e->getLine() . ')');
-            die('Something wrong');
+            die('Exception: "' . $e->getMessage() . '" (' . $e->getFile() . ':' . $e->getLine() . ')');
+//            die('Something wrong');
         }
     }
 
@@ -53,6 +59,7 @@ abstract class AbstractController
      */
     public function render($controller, $action)
     {
+        $this->view['page'] = sprintf('%s__%s', $controller, $action);
         $file = sprintf('%s/%s.html', strtolower($controller), strtolower($action));
         echo self::getTwig()->render($file, $this->view);
     }
