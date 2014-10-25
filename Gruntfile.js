@@ -12,19 +12,13 @@ module.exports = function (grunt) {
 //        },
         less: {
             development: {
-                options: {
-                    paths: ['public/css']
-                },
                 files: {
-                    "public/css/common.css": "public/css/common.less"
+                    "public/css/common.css": "public/less/common.less"
                 }
             },
             production: {
-                options: {
-                    paths: ['public/css']
-                },
                 files: {
-                    "public/css/common.css": "public/css/common.less"
+                    "public/css/common.css": "public/less/common.less"
                 }
             }
         }
