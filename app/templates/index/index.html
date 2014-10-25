@@ -1,24 +1,9 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+{% extends "layout.html" %}
 
-    <link rel="stylesheet" href="/css/common.css">
+{% block content %}
+<div class="content col-lg-12">
 
-    <title>Empty Project</title>
-</head>
-<body>
+    Hello {{ hello }}.
 
-    <div class="container"></div>
-
-    <script src="/js/jquery.ae.image.resize.min.js"></script>
-    <script src="/js/common.js"></script>
-
-</body>
-</html>
+</div>
+{% endblock %}
